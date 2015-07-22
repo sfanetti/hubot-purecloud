@@ -4,7 +4,7 @@ _ = require 'underscore'
 Controller = require './framework/Controller.coffee'
 
 module.exports = class CarrierPigeonController extends Controller
-
+###
 	 @expose:
 	 	subscribe: (event, listener) ->
 	 		@realtime.debug 'status', 'statusSubscribe', personId, ns
@@ -46,3 +46,4 @@ module.exports = class CarrierPigeonController extends Controller
 	 		for key of @_events
 	 			[personId, ns] = key.split(':')
 	 			@realtime.emit 'statusSubscribe', personId, ns
+###
