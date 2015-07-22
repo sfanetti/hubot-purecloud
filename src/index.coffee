@@ -197,8 +197,8 @@ class PurecloudBot extends Adapter
     @receive new TextMessage(user, msg.body)
     
     
-    getRealTime: ->
-      return @realtime
+  getRealTime: ->
+    return @realtime
 
 
 exports.use = (@robot) ->
