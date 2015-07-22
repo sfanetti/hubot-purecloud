@@ -54,7 +54,7 @@ class PurecloudBot extends Adapter
 
     @realtime = new Realtime @client
     
-    // Hack -- this should not be here but just trying to jump access to the realtime client
+    # Hack -- this should not be here but just trying to jump access to the realtime client
     global.realtime = @realtime
 
     @setupControllers()
