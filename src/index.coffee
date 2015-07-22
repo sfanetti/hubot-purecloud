@@ -53,6 +53,8 @@ class PurecloudBot extends Adapter
     @makeClient()
 
     @realtime = new Realtime @client
+    
+    global.realtime = @realtime
 
     @setupControllers()
 
@@ -195,10 +197,6 @@ class PurecloudBot extends Adapter
     console.log 'message', 'user', user
     
     @receive new TextMessage(user, msg.body)
-    
-    
-  getRealTime: ->
-    return @realtime
 
 
 exports.use = (@robot) ->
