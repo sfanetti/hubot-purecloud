@@ -140,8 +140,6 @@ module.exports = class RoomController extends Controller
     [to] = stanza.attrs.to.split('/')
     [jid] = stanza.attrs.from.split('/')
     
-    console.log stanza.attrs
-
     @_occupants[room] or= {}
     @_pendingOccupants[room] or= {}
     if stanza.attrs.type is 'unavailable'
