@@ -138,6 +138,8 @@ module.exports = class RoomController extends Controller
     [from] = stanza.attrs.ofrom.split('/')
     [room] = stanza.attrs.from.split('/')
     [to] = stanza.attrs.to.split('/')
+    
+    console.log stanza.attrs
 
     @_occupants[room] or= {}
     @_pendingOccupants[room] or= {}
