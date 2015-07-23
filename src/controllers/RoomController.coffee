@@ -138,6 +138,7 @@ module.exports = class RoomController extends Controller
     [from] = stanza.attrs.ofrom.split('/')
     [room] = stanza.attrs.from.split('/')
     [to] = stanza.attrs.to.split('/')
+    [jid] = stanza.attrs.from.split('/')
     
     console.log stanza.attrs
 
@@ -156,8 +157,8 @@ module.exports = class RoomController extends Controller
       if from is @realtime.jid.bare().toString()
         @emit 'join:'+room.split('@')[0]
 
-    @realtime.debug 'room', 'occupantChange', {room, from, type}
-    @emit 'occupantChange', {room, from, type}
+    console.log 'room', 'occupantChange', {room, from, type, jid}
+    @emit 'occupantChange', {room, from, type, jid}
 
     if from is to
       @_handleJoinRoomConfirmation stanza
